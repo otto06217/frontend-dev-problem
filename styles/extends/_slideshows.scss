@@ -1,0 +1,54 @@
+// NOTE: This is a little janky in that it makes assumptions on the slide and
+// transition lengths based on the number of slides. Might be better to pull it
+// into a mixin with params instead of doing this.
+
+%slides {
+  overflow: hidden;
+  position: relative;
+
+  > * {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    opacity: 0;
+  }
+}
+
+@for $slides from 2 through 12 {
+  $slide-length: 100 / $slides;
+  $transition-length: $slides / 2;
+  $start: $slide-length - $transition-length;
+  $end: 100 - $transition-length;
+
+  @keyframes slideshow-#{$slides} {
+    from,
+    #{$start}%,
+    to {
+      opacity: 1;
+    }
+
+    #{$slide-length}%,
+    #{$end}% {
+      opacity: 0;
+    }
+  }
+
+  [data-slides='#{$slides}'] {
+    @extend %slides;
+
+    @for $slide from 1 through $slides {
+      $length-ms: 2000;
+
+      > *:nth-child(#{$slide}) {
+        animation-name: slideshow-#{$slides};
+        animation-duration: #{$slides * $length-ms}ms;
+        animation-delay: -#{$slide * $length-ms - $length-ms}ms;
+        animation-iteration-count: infinite;
+      }
+    }
+
+  }
+}

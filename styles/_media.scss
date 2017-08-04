@@ -1,0 +1,17 @@
+// Photos, videos, etc.
+
+#{$media-elements} {
+  display: block;
+  max-width: 100%;
+}
+
+picture {
+  overflow: auto;
+  display: table;
+
+  img {
+    width: 100%;
+    height: auto;
+    display: table-row;
+  }
+}

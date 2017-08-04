@@ -1,0 +1,44 @@
+header.section {
+  background-color: $brand-blue;
+
+  color: $white;
+
+  section.content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  h1 {
+    margin: 0.25em auto 0.25em;
+    max-width: $content-width;
+    padding-left: 1rem;
+  }
+
+  nav {
+    @extend %nav;
+
+    ul {
+      width: 100%;
+      height: 100%;
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+
+      li {
+        a {
+          padding: 0.5em;
+
+          text-transform: lowercase;
+
+          &:hover {
+            color: inherit;
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+}

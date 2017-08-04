@@ -1,0 +1,210 @@
+// All forms and form-related things like inputs, selects, textareas, etc.
+// will eventually go here.
+
+%input-style {
+  display: block;
+  margin: 1em auto;
+  padding: 0.5em;
+  width: 100%;
+
+  background: $white;
+
+  border: 0.125em solid $brand-warm-gray;
+  border-radius: 0.25em;
+
+  font: inherit;
+
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    text-shadow 250ms ease,
+    box-shadow 250ms ease;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-color: $brand-orange;
+    box-shadow: 0 0 0.5em rgba($brand-orange, 0.5);
+    outline: none;
+  }
+}
+
+#{$text-inputs} {
+  @extend %input-style;
+
+  &.md {
+    @extend %markdown;
+  }
+}
+
+textarea {
+  min-height: 6em;
+  resize: vertical;
+}
+
+label {
+  display: block;
+  margin: 1em auto;
+
+  font-family: $slab;
+
+  @each $text-input in $text-inputs {
+    + #{$text-input},
+    > #{$text-input} {
+      margin-top: -1em;
+    }
+  }
+}
+
+input[type=checkbox],
+input[type=radio] {
+  // margin-bottom: 1em;
+}
+
+fieldset {
+  margin-top: 1em;
+  padding: 1em;
+
+  border: 0.125em solid lighten($brand-warm-gray, 50%);
+  border-radius: 0.25em;
+
+  > h1:first-child,
+  > h2:first-child,
+  > h3:first-child,
+  > h4:first-child,
+  > h5:first-child,
+  > h6:first-child {
+    margin-top: 0;
+  }
+}
+
+%form-buttons {
+  #{$buttons} {
+    float: right;
+    margin-left: 1em;
+  }
+
+  section {
+    clear: both;
+  }
+}
+
+form {
+  @extend %form-buttons;
+}
+
+.dropdown {
+  // TODO: look into Firefox weirdness?
+  @extend %input-style;
+
+  display: flex;
+  margin-top: -1em;
+  position: relative;
+
+  select {
+    bottom: 0;
+    height: 100%;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+
+    // opacity: 0;
+
+
+    // Unstyle but keep visible
+    padding-left: 0.5em;
+
+    background: transparent;
+
+    border: none;
+
+    color: inherit;
+    font: inherit;
+
+    appearance: none;
+  }
+
+  &::after {
+    content: " ▼";
+    flex-grow: 1;
+
+    line-height: 1em;
+    text-align: right;
+
+    pointer-events: none;
+  }
+}
+
+%form {
+  font-size: 0; // Fix white-space for inline-block
+
+  > * {
+    display: inline-block;
+    width: 100%;
+
+    font-size: 1rem;
+  }
+}
+
+%form-field {
+  display: inline-block;
+  margin-right: 1em;
+}
+
+%form-field-half {
+  @extend %form-field;
+  width: calc(50% - 0.5em);
+}
+
+%form-field-third {
+  @extend %form-field;
+  width: calc(33.33% - 0.67em);
+}
+
+%form-field-end {
+  margin-right: 0;
+}
+
+.create-new-address {
+  @extend %form;
+
+  .first-name,
+  .last-name,
+  .city,
+  .state,
+  .zip,
+  .country {
+    // half-width
+    @extend %form-field-half;
+  }
+
+  .last-name,
+  .state,
+  .country {
+    @extend %form-field-end;
+  }
+}
+
+.create-new-transaction-method {
+  @extend %form;
+
+  .name,
+  .number {
+    @extend %form-field-half;
+  }
+
+  .exp-month,
+  .exp-year,
+  .cvc {
+    @extend %form-field-third;
+  }
+
+  .number,
+  .cvc {
+    @extend %form-field-end;
+  }
+}

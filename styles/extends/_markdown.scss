@@ -1,0 +1,20 @@
+%markdown {
+  $icon-width: 2em;
+  $padding: 0.5em;
+
+  padding-right: $icon-width + (2 * $padding);
+
+  background-image:
+    linear-gradient(
+      rgba($white, 0.825),
+      rgba($white, 0.825)
+    ),
+    url('/assets/icons/markdown.svg');
+  background-position:
+    center,
+    top $padding right $padding;
+  background-repeat: no-repeat;
+  background-size:
+    cover,
+    $icon-width;
+}

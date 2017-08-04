@@ -1,0 +1,99 @@
+// TODO: Get Kate's help with this
+
+h1 {
+  font-family: $sans;
+  font-size: 2.25em;
+  font-style: italic;
+  font-weight: $light-weight;
+  line-height: 1em;
+
+  @include media($medium) {
+    font-size: 3em;
+  }
+}
+
+h2 {
+  font-family: $sans;
+  font-size: 4.75vw;
+  font-weight: $light-weight;
+  text-transform: uppercase;
+  letter-spacing: 0.175em;
+
+  @include media($medium) {
+    font-size: 3vw;
+  }
+
+  @include media($large) {
+    font-size: 2.125em;
+  }
+}
+
+h3 {
+  font-size: 1.75em;
+  font-family: $slab;
+  font-weight: $normal-weight;
+
+  @include media($medium) {
+    font-size: 2em;
+  }
+}
+
+h4 {
+  font-size: 1.5em;
+
+  @include media($medium) {
+    font-size: 1.5em;
+  }
+}
+
+h5 {
+  font-size: 1.25em;
+
+  @include media($medium) {
+    font-size: 1em;
+  }
+}
+
+h6 {
+  font-size: 1em;
+
+  @include media($medium) {
+    font-size: 0.75em;
+  }
+}
+
+p,
+ul,
+ol {
+  line-height: 1.5em;
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-skip: ink;
+
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    text-shadow 250ms ease,
+    box-shadow 250ms ease;
+
+  &:hover {
+    color: $brand-orange;
+  }
+
+  &:focus {
+    box-shadow: 0 0 0.5em $brand-orange;
+    outline: 1px solid $brand-orange;
+  }
+
+  &:hover,
+  &:active,
+  &:active:focus {
+    // Override and undo focus styling
+    box-shadow: none;
+    outline: none;
+  }
+}

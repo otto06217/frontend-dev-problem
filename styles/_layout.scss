@@ -1,0 +1,44 @@
+@import "layout/header";
+@import "layout/footer";
+@import "layout/omni";
+@import "layout/section-header";
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: $white;
+
+  color: $brand-warm-gray;
+  font: {
+    family: $sans;
+    size: 16px;
+  }
+
+  -webkit-overflow-scrolling: touch; // NOTE: Fixes laggy scrolling in iOS
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  min-height: 100%;
+
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  & > * {
+    width: 100%;
+  }
+}
+
+.content {
+  @include constrained-width;
+  padding: 1rem;
+}

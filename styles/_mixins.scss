@@ -1,0 +1,45 @@
+@mixin aspect-ratio($width, $height) {
+  position: relative;
+
+  &::before {
+    content: "";
+
+    display: block;
+    padding-top: ($height / $width) * 100%;
+    width: 100%;
+  }
+
+  > * {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin constrained-width($max: $content-width) {
+  max-width: $max;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@mixin grayscale($percent: 100%) {
+  filter: grayscale($percent);
+}
+
+@mixin media($range) {
+  @media only screen and (min-width: nth($range, 1)) {
+    @content
+  }
+}

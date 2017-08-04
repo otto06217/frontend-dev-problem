@@ -1,0 +1,90 @@
+%button-style {
+  display: inline-block;
+  padding: 0.5em 0.75em;
+
+  background-color: transparent;
+
+  border: 0.125em solid $brand-warm-gray;
+  border-radius: 0.25em;
+
+  color: inherit;
+  font-family: $slab;
+  font-size: 1em;
+  line-height: 1.5em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  transition:
+    color 250ms ease,
+    background-color 250ms ease,
+    border-color 250ms ease,
+    text-shadow 250ms ease,
+    box-shadow 250ms ease;
+  -webkit-appearance: none;
+
+  &:focus {
+    border-color: $brand-orange;
+    box-shadow: 0 0 0.5em rgba($brand-orange, 0.5);
+    outline: none;
+  }
+
+  &:disabled,
+  &.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+  }
+
+  &:hover,
+  &:active {
+    background-color: $brand-orange;
+    color: $white;
+    border-color: $brand-warm-gray;
+  }
+}
+
+%button-destructive {
+  background-color: $brand-red;
+
+  color: $white;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: lighten($brand-red, 10%);
+  }
+}
+
+%button-suggested {
+  background-color: $brand-blue;
+
+  color: $white;
+
+  &:focus,
+  &:hover,
+  &:active {
+    background-color: lighten($brand-blue, 10%);
+  }
+}
+
+#{$buttons} {
+  @extend %button-style;
+
+  &.destructive {
+    @extend %button-destructive;
+  }
+
+  &.suggested {
+    @extend %button-suggested;
+  }
+
+  &:not(:link) {
+    // See: "Buttons shouldn't have a hand cursor" by Simple = Human
+    // https://medium.com/simple-human/b11e99ca374b
+    cursor: default;
+  }
+
+  a:link & {
+    // Buttons shouldn't have a hand cursor, but the parent link should
+    cursor: inherit;
+  }
+}

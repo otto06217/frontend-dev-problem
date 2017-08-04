@@ -1,0 +1,62 @@
+// Defaults for hero images. Assume there's a media elements to set the size,
+// then any divs just get defaulted to positioned centered on top.
+.hero {
+  position: relative;
+
+  background-color: $brand-warm-gray;
+
+  // Can't just `& > #{$media-elements}`, have to each over it
+  @each $media-element in $media-elements {
+    // Only direct children get knocked down in opacity. Prevents `picture img`
+    // from being affected at both the `picture` and `img` tags.
+
+    & > #{$media-element} {
+      width: 100%;
+      opacity: 0.33;
+    }
+
+    @include media($large) {
+      & > #{$media-element} {
+        opacity: 1;
+      }
+    }
+  }
+
+  // Not sure if this should be more generic or not... perhaps :last-child?
+  div {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+
+    color: $white;
+    text-align: center;
+    text-shadow: 0 0 1em $brand-warm-gray;
+
+    h1 {
+      margin-bottom: 0.25em; // Mostly for Design + Buy heroes
+
+      @include media($large) {
+        font-size: 3vw; // Scale up with the window on large-up
+      }
+    }
+
+    #{$buttons} {
+      border-color: $white;
+      box-shadow:
+        0 0 1em -0.25em $brand-warm-gray,
+        0 0 1em -0.25em $brand-warm-gray inset;
+
+      @include media($large) {
+        font-size: 1.5vw;
+        font-weight: $bold-weight;
+      }
+
+      &:hover {
+        text-shadow: none;
+        box-shadow: none;
+      }
+    }
+  }
+}

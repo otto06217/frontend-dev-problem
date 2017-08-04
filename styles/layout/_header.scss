@@ -1,0 +1,108 @@
+header.main {
+  padding: 0 1rem 0 0;
+
+  @include media($large) {
+    padding: 1rem;
+  }
+
+  nav {
+    @extend %nav;
+    @include constrained-width;
+    display: flex;
+    flex-wrap: wrap;
+
+    ul {
+      flex-grow: 1;
+      display: block;
+
+      li {
+        a {
+          padding: 0.25rem 0.5rem;
+
+          font-size: 1rem;
+          font-family: $slab;
+          line-height: 1.25em;
+          text-decoration: none;
+          text-transform: lowercase;
+
+          &:hover {
+            color: inherit;
+          }
+        }
+      }
+    }
+
+    .home {
+      display: inline-block;
+      margin: 1rem;
+      width: 50%;
+      max-width: 200px;
+    }
+
+    .quick {
+      align-self: center;
+
+      font-weight: $light-weight;
+      text-align: right;
+
+      @include media($medium) {
+        order: 2;
+      }
+
+      a {
+        padding: 1rem 0.5rem;
+
+        font-size: 0;
+
+        @include media($large) {
+          padding: 1rem;
+
+          // font-size: 1rem; // TODO: Uncomment once we're in v2
+        }
+
+        i {
+          font-size: 1rem;
+          opacity: 0.8;
+
+          @include media($large) {
+            padding: 0;
+          }
+        }
+      }
+    }
+
+    .categories {
+      align-self: center;
+      padding-left: 0.5rem;
+      width: 100%;
+
+      font-weight: $light-weight;
+
+      @include media($medium) {
+        order: 1;
+        width: auto;
+
+      }
+
+      @include media($large) {
+        text-align: center;
+      }
+
+
+      a {
+        padding: 1rem 0.5rem;
+
+        @include media($medium) {
+          padding: 1rem;
+        }
+
+        @include media($large) {
+          padding-left: 1.5rem;
+          padding-right: 1.5rem;
+
+          text-align: center;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+%accent-copy { // TODO: Pull this out into something more generic?
+  font-size: 4.5vw;
+  font-family: $slab;
+  font-weight: $light-weight;
+  line-height: 1.25em;
+
+  @include media($medium) {
+    font-size: 2.5vw;
+  }
+
+  @include media($large) {
+    font-size: 2em;
+  }
+}

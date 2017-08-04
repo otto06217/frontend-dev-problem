@@ -1,0 +1,71 @@
+// Fonts
+$sans: 'System76 Fira Sans', 'Fira Sans', sans-serif;
+$slab: 'System76 Roboto Slab', 'Roboto Slab', serif;
+$mono: 'System76 Fira Mono', 'Fira Mono', 'Roboto Mono', 'Ubuntu Mono', monospace;
+
+// Font Weights
+$thin-weight:     100;
+$light-weight:    300;
+$normal-weight:   400;
+$medium-weight:   500;
+$semibold-weight: 600;
+$bold-weight:     700;
+
+// Brand Colors
+$brand-warm-gray: #574e4a;
+$brand-orange:    #faa41a;
+$brand-blue:      #48b9c7;
+$brand-yellow:    #ffce51;
+$brand-red:       #f15d22;
+$brand-green:     #73c48f;
+
+// Other Colors
+$black:       #000;
+$white:       #fff;
+$dark-gray:   #333;
+$medium-gray: #999;
+$light-gray:  #ddd;
+
+$purple:      #300a24; // Ubuntu terminal (and anything that needs to match)
+
+// Layout range variables
+$small:   (0px,                  600px);
+$smablet: (nth($small, 2) + 1,   768px);
+$medium:  (nth($smablet, 2) + 1, 1024px);
+$large:   (nth($medium, 2) + 1,  1440px);
+$xlarge:  (nth($large, 2) + 1,   1920px);
+$xxlarge: (nth($xlarge, 2) + 1,  2560px);
+
+$content-width: 1280px;
+
+$buttons:
+  'button',
+  '.button',
+  '[type=submit]',
+  '[type=button]',
+  '[type=reset]';
+
+$headings:
+  'h1',
+  'h2',
+  'h3',
+  'h4',
+  'h5',
+  'h6';
+
+$media-elements:
+  'picture',
+  'video',
+  'img',
+  'iframe';
+
+$text-inputs:
+  'textarea',
+  'input[type=text]',
+  'input[type=email]',
+  'input[type=password]',
+  'input[type=number]',
+  'input[type=tel]',
+  'input[type=date]',
+  'input[type=time]',
+  'input:not([type])';

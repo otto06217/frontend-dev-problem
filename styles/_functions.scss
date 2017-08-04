@@ -1,0 +1,11 @@
+@function contrast($color) {
+  // Lightness should be 50 in a perfect world, but we lean toward white-on-
+  // bright colors, so we use 60. Only weird one is white-on-orange.
+  @if (lightness($color) > 60) {
+    // Light input, return dark
+    @return $brand-warm-gray;
+  } @else {
+    // Dark input, return light
+    @return $white;
+  }
+}

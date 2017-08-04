@@ -1,0 +1,18 @@
+%strike {
+  position: relative;
+
+  text-decoration: none;
+  font-weight:  normal;
+
+  &::before {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    right: 0;
+
+    border-top: 0.125rem solid;
+
+    transform: rotate(-15deg);
+    content: "";
+  }
+}

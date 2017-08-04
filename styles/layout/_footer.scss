@@ -1,0 +1,114 @@
+footer.main {
+  $bg: $brand-warm-gray;
+  $fg: $white;
+
+  flex: 1 100%;
+
+  background-color: $bg;
+
+  // Get rid of white rendering glitch
+  border-bottom: 2px solid $bg;
+
+  color: $fg;
+  font-weight: $light-weight;
+
+  a {
+    display: inline-block;
+
+    color: mix($fg, $bg, 75%);
+    text-decoration: none;
+
+    transition: color 250ms ease;
+
+    &:hover {
+      color: $fg;
+      text-decoration: underline;
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+
+    list-style: none;
+
+    li {
+      display: inline;
+    }
+  }
+
+  nav {
+    @include constrained-width;
+
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1em 1em 0;
+
+    font-size: 1.125em;
+
+    @include media($large) {
+      flex-wrap: nowrap;
+    }
+
+    .pages {
+      @include constrained-width;
+
+      columns: 2;
+      line-height: 1.25em;
+
+      a {
+        display: block;
+        padding: 0.33em 0;
+      }
+    }
+
+    .social {
+      display: block;
+      flex-grow: 1;
+      order: 0;
+
+      text-align: center;
+
+      @include media($large) {
+        text-align: right;
+      }
+
+      a {
+        color: mix($fg, $bg, 40%);
+        font-size: 0;
+
+        &:hover {
+          color: mix($fg, $bg, 90%);
+        }
+
+        i {
+          padding: 0.25em;
+          font-size: 1.75rem;
+
+          @include media($large) {
+            padding: 0.5em;
+            font-size: 2.25rem;
+          }
+        }
+      }
+    }
+  }
+
+  .copyright,
+  .disclaimer,
+  .trademarks {
+    color: mix($fg, $bg);
+    font-family: $slab;
+    text-align: center;
+  }
+
+  .copyright {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .disclaimer,
+  .trademarks {
+    font-size: 0.625em;
+  }
+}
