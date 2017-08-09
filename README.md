@@ -2,6 +2,10 @@
 
 ## Contents of This Repo
 
+This is a simple client-side web app that somewhat mimics
+[System76.com](https://system76.com). No frameworks have been pulled in, but you
+are welcome (and encouraged) to pull in what you deem necessary.
+
 ### HTML
 
 The root document lives in `/index.html`, and partials from the `partials/`
@@ -9,7 +13,7 @@ directory are available via the `@@include()` preprocessor directive. We expect
 the solution to be contained within `section.content` in the final rendered
 page, but please feel free to structure the templates as you see fit.
 
-Use `gulp serve` to build and run your application. Gulp is set up to host on
+Use `gulp serve` to build and run your application. Gulp is set up to host at
 `localhost:7676` and to serve the compiled `/index.html` for any unknown
 request.
 
@@ -23,20 +27,21 @@ empty to allow you the freedom to structure your solution as you see fit.
 
 Results are compiled using [babel](https://babeljs.io/), with the `babel-env`
 preset, a module loader, and the babel polyfill included, meaning that almost
-any valid ESnext code should work. You are not expected to manually handle any
-platform inconsistencies beyond what babel handles for you.
+any valid ESnext code should work. You are **not** expected to manually handle
+any platform inconsistencies beyond what babel handles for you.
 
 ### Styles
 
-The styles contains a simplified extraction from the production styles on
-https://system76.com.
+The `styles` directory contains a simplified extraction from the production
+styles on [System76.com](https://system76.com).
 
-FIXME: what should someone know in order to get oriented to the existing code?
+Helpful variables can be found in `/styles/_variables.scss`, and all colors
+should be derived from those variables. For typography, use or base off of the
+built-in styles as much as possible.
 
-Results of the script are run through
-[autoprefixer](https://github.com/postcss/autoprefixer). You are not expected to
-manually handle explicit prefixes, special cases, or workarounds for any
-platform beyond what autoprefixer handles for you.
+The Sass is run through [autoprefixer](https://github.com/postcss/autoprefixer).
+You are **not** expected to manually handle explicit prefixes, special cases, or
+workarounds for any platform beyond what autoprefixer handles for you.
 
 ## Challenge
 
@@ -47,8 +52,8 @@ or frameworks you feel will help.
 
 We intend for this to take about 2 hours of concentrated work, but feel free to
 use as much or as little time as you need to complete it to your satisfaction.
-Let us know when you're ready to have your code reviewed by submitting a pull
-request.
+Let us know when you're ready to have your code reviewed by [submitting a pull
+request](#submitting-your-code-sample).
 
 We are looking to gauge your skills, not to trick you, so if there's anything
 you don't understand or wish to have clarified please don't hesitate to ask. We
@@ -114,7 +119,7 @@ specs for a given product are at `GET
 ## Submitting your Code Sample
 
 Fork this repository to your personal GitHub account, complete it to your
-satisfaction, and file a pull request against this repository. We will expect
+satisfaction, and file a pull request against this repository. We will treat
 that pull request as your submission.
 
 Note that because this repository is private, your fork will be private as well.
