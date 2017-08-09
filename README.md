@@ -2,19 +2,41 @@
 
 ## Contents of This Repo
 
-FIXME
-
 ### HTML
 
-FIXME
+The root document lives in `/index.html`, and uses partials from the `partials/`
+directory are available via the `@@include()` preprocessor directive. We expect
+the solution to be contained within `section.content` in the final rendered page,
+but please feel free to structure the templates as you see fit.
+
+Use `gulp serve` to build and run your application. Gulp is set up to host on
+`localhost:7676` and to serve the compiled `/index.html` for any unknown
+request.
 
 ### Scripts
 
-FIXME
+The scripts are built from `scripts/app.js` and anything included therein via
+`import`. Packages installed through NPM can be imported via their bare name
+(i.e. `import 'jquery'`) and local files can be imported via a relative path
+(i.e. `import './my-file'` for `/scripts/my-file.js`). We've left it mostly
+empty to allow you the freedom to structure your solution as you see fit.
+
+Results are compiled using [babel](https://babeljs.io/), with the `babel-env`
+preset, a module loader, and the babel polyfill included, meaning that almost
+any valid ESnext code should work. You are not expected to manually handle any
+platform inconsistencies beyond what babel handles for you.
 
 ### Styles
 
-FIXME
+The styles contains a simplified extraction from the production styles on
+https://system76.com.
+
+FIXME: what should someone know in order to get oriented to the existing code?
+
+Results of the script are run through
+[autoprefixer](https://github.com/postcss/autoprefixer). You are not expected to
+manually handle explicit prefixes, special cases, or workarounds for any
+platform beyond what autoprefixer handles for you.
 
 ## Challenge
 
