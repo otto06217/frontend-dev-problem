@@ -4,10 +4,10 @@
 
 ### HTML
 
-The root document lives in `/index.html`, and uses partials from the `partials/`
+The root document lives in `/index.html`, and partials from the `partials/`
 directory are available via the `@@include()` preprocessor directive. We expect
-the solution to be contained within `section.content` in the final rendered page,
-but please feel free to structure the templates as you see fit.
+the solution to be contained within `section.content` in the final rendered
+page, but please feel free to structure the templates as you see fit.
 
 Use `gulp serve` to build and run your application. Gulp is set up to host on
 `localhost:7676` and to serve the compiled `/index.html` for any unknown
