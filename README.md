@@ -36,17 +36,17 @@ repository.
 ### Description
 
 We want users to be able to compare two System76 products and their tech specs.
+To do so, users should be able to load `/compare/` and be able to select two
+products (that are both `visible` and `active`).
 
-Users should be able to visit a URL of the form `/compare/#model1#:#model2#`,
-where `#model1#` and `#model2#` are model numbers from our current catalog. They
-should see a brief header, including at least the human readable name, base
-price, and thumbnail image, for each product. They should also see a combined
-table of tech specs for both products. Please see the attached wireframes for
-details.
+The URL should update to the form `/compare/#model1#:#model2#`, where `#model1#`
+and `#model2#` are model numbers from our current catalog. They should see a
+comparison that includes thumbnails, price, and tech specs.
 
-Users should furthermore be able to change the selected products. Changes must
-update the URL and load new content within the page. The browser's back and
-forward buttons should navigate cleanly.
+Users should be able to change the selected products. Changes must update the
+URL and load new content within the page. The browser's back and forward buttons
+should navigate cleanly, and linking directly to the URL should load the
+appropriate comparison.
 
 Tech specs are not directly correlated across products in our data set, but they
 do have consistent copy conventions. For the purposes of this exercise, we
@@ -57,13 +57,23 @@ order of `#model1#` as authoritative.
 
 ### Wireframes
 
-#### Smaller Displays
-
-![Small Displays wireframe](/wireframes/small-displays.jpg)
+Here are some relatively rough wireframes from our UX architect.
 
 #### Larger Displays
 
 ![Large Displays wireframe](/wireframes/large-displays.jpg)
+
+Side-by-side comparison of two products. Titles on the left. Shared titles are
+grouped together (i.e. if both products have a spec with title "Display", they
+appear on the same line). If two spec details across products are shared, they
+appear lighter so the user is guided to the actual differences in the products.
+
+#### Smaller Displays
+
+![Small Displays wireframe](/wireframes/small-displays.jpg)
+
+On smaller displays (e.g. phone-sized displays), the titles are stacked above
+each spec comparison. The other details from the larger wireframe still apply.
 
 ### Relevant System76 URL Structure
 
