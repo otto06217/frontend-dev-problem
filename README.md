@@ -37,7 +37,7 @@ repository.
 
 We want users to be able to compare two System76 products and their tech specs.
 
-Users should be able to visit a URL of the form `/compare/#model1#:#model2`,
+Users should be able to visit a URL of the form `/compare/#model1#:#model2#`,
 where `#model1#` and `#model2#` are model numbers from our current catalog. They
 should see a brief header, including at least the human readable name, base
 price, and thumbnail image, for each product. They should also see a combined
@@ -70,7 +70,8 @@ model number of the product.
 Our API is available at `https://api-v2.system76.com/`.
 
 `GET /products` provides a list of all the products in our catalog. The tech
-specs for a given product are at `GET /products/:product_id/product_tech_specs`.
+specs for a given product are at `GET
+/products/#product_id#/product_tech_specs`.
 
 ## Submitting your Code Sample
 
@@ -85,7 +86,7 @@ our hiring search has concluded.
 
 ### Code Review
 
-We (bencates and cassidyjames) will be reviewing your submission on GitHub. We
+We (@bencates and @cassidyjames) will be reviewing your submission on GitHub. We
 will add comments, ask questions, and critique decisions.
 
 Treat this like a pull request you want to have merged. Take feedback, argue
