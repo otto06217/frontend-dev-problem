@@ -57,7 +57,13 @@ order of `#model1#` as authoritative.
 
 ### Wireframes
 
-FIXME
+#### Smaller Displays
+
+![Small Displays wireframe](/wireframes/small-displays.jpg)
+
+#### Larger Displays
+
+![Large Displays wireframe](/wireframes/large-displays.jpg)
 
 ### Relevant System76 URL Structure
 
