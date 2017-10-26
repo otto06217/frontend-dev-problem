@@ -1,5 +1,15 @@
 # System76 Frontend Developer Challenge
 
+:warning: **This excercise has concluded, and this repo has been publicized solely 
+in case anyone is interested. System76 is not currently hiring front-end web 
+developers.**
+
+**For potential current openings, see [system76.com/careers](https://system76.com/careers)**
+
+We sent this challenge to front-end web developer applicants as a way to understand their
+code style, thought processes, and interaction. It was one piece of the larger hiring 
+process, but one that we can open up and share here. :smile:
+
 ## Contents of This Repo
 
 This is a simple client-side web app that somewhat mimics
